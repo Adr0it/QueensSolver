@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+
+<h1 id="title">Queens Solver</h1>
+<div class="input-container">
+    <div class="dim-container">
+        <div class="input-text" id="dim-text">Dim: </div>
+        <select id="numRows"></select>
+        <div>x</div>
+        <select id="numCols"></select>
+    </div>
+    <div class="blank"></div>
+    <div class="color-container">
+        <div class="input-text" id="color-text">Color: </div>
+        <input id="color-wheel" type="color"/>
+    </div>
+    <div class="input-text">Input Matrix:</div>
+    <div class="grid-wrapper">
+        <div class="cell" id="(1,1)"></div>
+    </div>
+    <div id="solve-button-container">
+        <button id="solve-button">Solve</button>
+    </div>
+</div>
+
+<script type="text/javascript" src="static/queens.js"></script>
+</body>
+</html>
