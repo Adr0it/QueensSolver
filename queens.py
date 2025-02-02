@@ -51,6 +51,23 @@ def solveMatrix(W, n):
             model.addConstr(edge[i+1, j] + edge[i, j] <= 1)
             model.addConstr(edge[i+1, j-1] + edge[i, j] <= 1)
             model.addConstr(edge[i, j-1] + edge[i,j] <= 1)
+    for j in range(1, n-1):
+        # First Row
+        model.addConstr(edge[0, j-1] + edge[0,j] <= 1)
+        model.addConstr(edge[0+1, j-1] + edge[0,j] <= 1)
+        model.addConstr(edge[0+1, j] + edge[0,j] <= 1)
+        model.addConstr(edge[0+1, j+1] + edge[0,j] <= 1)
+        model.addConstr(edge[0, j+1] + edge[0,j] <= 1)
+
+        # Last Row
+        model.addConstr(edge[(n-1), j-1] + edge[(n-1),j] <= 1)
+        model.addConstr(edge[(n-1)-1, j-1] + edge[(n-1),j] <= 1)
+        model.addConstr(edge[(n-1)-1, j] + edge[(n-1),j] <= 1)
+        model.addConstr(edge[(n-1)-1, j+1] + edge[(n-1),j] <= 1)
+        model.addConstr(edge[(n-1), j+1] + edge[(n-1),j] <= 1)
+
+
+
 
     # Color Definition Constraint
     for i in range(n):
