@@ -43,6 +43,7 @@ def solveMatrix(W, n):
     # No Adjacent Coloring Constraint
     for i in range(1, n-1):
         for j in range(1, n-1):
+            # Middle Rows
             model.addConstr(edge[i-1, j-1] + edge[i, j] <= 1)
             model.addConstr(edge[i-1, j] + edge[i, j] <= 1)
             model.addConstr(edge[i-1, j+1] + edge[i, j] <= 1)
